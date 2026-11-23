@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #25245b, transparent 40%), #0b1020;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  padding: 65px 20px 50px;
+  background: linear-gradient(135deg, #171c38, #29245e);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px 24px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #725cff;
+  filter: blur(120px);
+  opacity: 0.35;
+  top: -150px;
+  right: 10%;
+}
+
+#githubLogo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+header h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+header h1 span {
+  color: #9d8cff;
+}
+
+.description {
+  color: #b8bfd6;
+  font-size: 15px;
+  line-height: 1.7;
+  position: relative;
+}
+
+#info {
+  background: #131a2c;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
+  border-radius: 0 0 24px 24px;
+  min-height: 300px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 750px;
+  margin: 0 auto 35px;
+}
+
+#searchInput {
+  flex: 1;
+  min-width: 0;
+  padding: 17px 22px;
+  border-radius: 12px;
+  border: 1px solid #343d58;
+  background: #0c1222;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+#searchInput::placeholder {
+  color: #77819b;
+}
+
+#searchInput:focus {
+  border-color: #8874ff;
+  box-shadow: 0 0 0 4px rgba(136, 116, 255, 0.13);
+}
+
+#searchBtn,
+#deleteBtn {
+  padding: 17px 27px;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#searchBtn {
+  background: linear-gradient(135deg, #7864ff, #a18aff);
+  color: white;
+  box-shadow: 0 5px 20px rgba(120, 100, 255, 0.25);
+}
+
+#searchBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(120, 100, 255, 0.4);
+}
+
+#deleteBtn {
+  background: #252d42;
+  color: #ff8585;
+  border: 1px solid #3c455b;
+}
+
+#deleteBtn:hover {
+  background: #422631;
+  border-color: #ff6b6b;
+  transform: translateY(-3px);
+}
+
+#displayedAccounts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Optional profile card styling for generated results */
+.profile-card {
+  background: #1b2439;
+  border: 1px solid #303b56;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  border-color: #8874ff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #8874ff;
+  margin-bottom: 15px;
+}
+
+.profile-card h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.profile-card p {
+  color: #aab3ca;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.profile-card a {
+  display: inline-block;
+  background: #7966ff;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.profile-card a:hover {
+  background: #9a89ff;
+}
+
+#loading {
+  text-align: center;
+  color: #9d8cff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 20px;
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 15px;
+  }
+
+  header {
+    padding: 50px 15px;
+  }
+
+  #info {
+    padding: 25px 15px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #searchInput,
+  #searchBtn,
+  #deleteBtn {
+    width: 100%;
+  }
+
+  #displayAccounts {
+    grid-template-columns: 1fr;
+  }
+}

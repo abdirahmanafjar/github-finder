@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Finder</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>
+          <img src="./image.png" alt="Github logo" id="githubLogo" />GitHub
+          <span>Finder.</span>
+        </h1>
+        <p class="description">
+          Discover GitHub profiles, explore developers<br />
+          and find amazing coding projects.
+        </p>
+      </header>
+
+      <div id="info">
+        <div class="actions">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Enter a GitHub username..."
+            aria-label="GitHub username"
+          />
+
+          <button id="searchBtn">Search →</button>
+          <button id="deleteBtn">Clear</button>
+        </div>
+        <div id="loading"></div>
+
+        <div id="displayedAccounts"></div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
